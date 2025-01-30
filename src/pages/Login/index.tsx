@@ -2,7 +2,8 @@ import { type FormEvent, useRef, type JSX, useState } from 'react'
 
 import './styles.css'
 import { Input, Button } from '../../components'
-import { useLocalStorage } from '../../hooks'
+import { useNavigate } from 'react-router'
+import { useStoreContext } from '../../context/StoreContext'
 
 const validLogin = 'admin'
 const validPassword = 'admin123'
@@ -10,7 +11,8 @@ const validPassword = 'admin123'
 export const Login = (): JSX.Element => {
 	const formRef = useRef<HTMLFormElement | null>(null)
 	const [error, setError] = useState<string | null>(null)
-	const { setValue, clearValue } = useLocalStorage()
+	const navigate = useNavigate()
+	const { setIsLoggedIn } = useStoreContext()
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
@@ -21,10 +23,11 @@ export const Login = (): JSX.Element => {
 			const password = formData.get('password')
 
 			if (username === validLogin && password === validPassword) {
-				setValue('isLoggedIn', 'true')
+				setIsLoggedIn(true)
+				navigate('/')
 			} else {
+				setIsLoggedIn(false)
 				setError('Wrong login or password')
-				clearValue('isLoggedIn')
 			}
 		}
 	}
