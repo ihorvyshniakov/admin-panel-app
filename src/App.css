@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
 }
 
 main {
@@ -9,6 +10,25 @@ main {
 	justify-content: center;
 	align-items: center;
 
-	padding-top: 2rem;
+	padding: 2rem 0 4rem;
 	background: #d2b6ff;
+}
+
+a {
+	padding: 1rem;
+	border-radius: 1rem;
+	text-decoration: none;
+	text-underline-offset: 0.25rem;
+	color: black;
+	transition: background 0.2s ease-in-out;
+}
+
+a:hover {
+	text-decoration: none;
+	background: grey;
+	color: white;
+}
+
+a.active {
+	text-decoration: underline;
 }

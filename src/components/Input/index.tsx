@@ -1,4 +1,5 @@
 import { type JSX } from 'react'
+import './Input.css'
 
 type InputProps = {
 	name: string
@@ -12,11 +13,9 @@ export const Input = ({
 	type = 'text'
 }: InputProps): JSX.Element => {
 	return (
-		<>
-			<label>
-				{text}
-				<input name={name} type={type} />
-			</label>
-		</>
+		<div className='input'>
+			<label htmlFor={name}>{text}</label>
+			<input id={name} name={name} type={type} />
+		</div>
 	)
 }

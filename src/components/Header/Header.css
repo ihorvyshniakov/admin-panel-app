@@ -1,0 +1,11 @@
+header {
+	padding: 2rem 4rem;
+	display: flex;
+	justify-content: center;
+}
+
+header > ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
