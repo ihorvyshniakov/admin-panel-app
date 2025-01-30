@@ -1,11 +1,17 @@
 header {
-	padding: 2rem 4rem;
+	padding: 1rem 4rem;
 	display: flex;
 	justify-content: center;
 }
 
 header > ul {
+	max-width: 600px;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+}
+
+header li {
+	display: flex;
+	align-items: center;
 }

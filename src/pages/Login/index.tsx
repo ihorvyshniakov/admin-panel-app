@@ -1,6 +1,5 @@
 import { type FormEvent, useRef, type JSX, useState } from 'react'
 
-import './Login.css'
 import { Input, Button } from '../../components'
 import { useNavigate } from 'react-router'
 import { useStoreContext } from '../../context/StoreContext'

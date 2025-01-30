@@ -2,7 +2,7 @@ import './App.css'
 import { Header } from './components'
 import { Navigation } from './Navigation'
 
-const App = () => {
+const App = (): JSX.Element => {
 	return (
 		<>
 			<Header />
