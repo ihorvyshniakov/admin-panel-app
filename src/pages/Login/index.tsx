@@ -1,4 +1,4 @@
-import { type FormEvent, useRef, type JSX, useState } from 'react'
+import { type FormEvent, useRef, useState } from 'react'
 
 import { Input, Button } from '../../components'
 import { useNavigate } from 'react-router'

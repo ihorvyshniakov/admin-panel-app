@@ -1,7 +1,5 @@
-import { type FormEvent, useState, type JSX, useRef } from 'react'
-
-import { Button, Input } from '../../../components'
 import { useFetch } from '../../../hooks'
+import EditableCell from './EditableCell'
 
 type User = {
 	id: number
@@ -24,26 +22,6 @@ export const UserDetails = ({ userId }: UserDetailsProps): JSX.Element => {
 	const { data, error, isLoading } = useFetch<User>(
 		`https://jsonplaceholder.typicode.com/users/${userId}`
 	)
-	const formRef = useRef<HTMLFormElement | null>(null)
-
-	const [editedAddress, setEditedAddress] = useState('')
-	const [isEditMode, setIsEditMode] = useState(false)
-
-	const handleEdit = (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault()
-		setIsEditMode(true)
-
-		if (formRef.current) {
-			const formData = new FormData(formRef.current)
-			const address = formData.get('address') || ''
-
-			if (typeof address === 'string' && address.trim() !== '') {
-				setEditedAddress(address)
-				setIsEditMode(false)
-				alert('Address successfully modified')
-			}
-		}
-	}
 
 	if (isLoading) return <div>Loading...</div>
 	if (error) return <div style={{ color: 'red' }}>{error}</div>
@@ -64,30 +42,10 @@ export const UserDetails = ({ userId }: UserDetailsProps): JSX.Element => {
 					</tr>
 					<tr>
 						<th>Address</th>
-						{/* <td>{data.address.city}</td> */}
-						<td>
-							<form
-								id='addressEditForm'
-								className='form-small'
-								onSubmit={handleEdit}
-								ref={formRef}
-							>
-								{isEditMode ? (
-									<Input
-										name='address'
-										type='text'
-										required
-									/>
-								) : (
-									<p>{editedAddress || data.address.city}</p>
-								)}
-							</form>
-						</td>
-						<td>
-							<Button form='addressEditForm'>
-								{isEditMode ? 'Ok' : 'Edit'}
-							</Button>
-						</td>
+						<EditableCell
+							name='Address'
+							value={data.address.city}
+						/>
 					</tr>
 					<tr>
 						<th>Email</th>

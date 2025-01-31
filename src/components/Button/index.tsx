@@ -1,8 +1,4 @@
-import {
-	type PropsWithChildren,
-	type JSX,
-	ComponentPropsWithoutRef
-} from 'react'
+import { type PropsWithChildren, ComponentPropsWithoutRef } from 'react'
 
 type ButtonProps = PropsWithChildren & ComponentPropsWithoutRef<'button'>
 
