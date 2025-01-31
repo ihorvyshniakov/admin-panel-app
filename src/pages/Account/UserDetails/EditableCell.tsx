@@ -1,5 +1,5 @@
 import { type FormEvent, useRef, useState } from 'react'
-import { Button, Input } from '../../../components'
+import { Button, Form, Input } from '../../../components'
 
 const EditableCell = ({
 	name,
@@ -30,7 +30,7 @@ const EditableCell = ({
 	return (
 		<>
 			<td>
-				<form
+				<Form
 					id={`edit-form-${name}`}
 					className='form-small'
 					onSubmit={handleEdit}
@@ -45,7 +45,7 @@ const EditableCell = ({
 					) : (
 						<p>{editedValue || value}</p>
 					)}
-				</form>
+				</Form>
 			</td>
 			<td>
 				<Button form={`edit-form-${name}`} className='edit-button'>

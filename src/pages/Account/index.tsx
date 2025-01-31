@@ -1,6 +1,6 @@
 import { type FormEvent, useRef, useState } from 'react'
 
-import { Button, Input } from '../../components'
+import { Button, Form, Input } from '../../components'
 import { UserDetails } from './UserDetails'
 
 export const Account = (): JSX.Element => {
@@ -20,7 +20,7 @@ export const Account = (): JSX.Element => {
 		<>
 			<h1>Account Page</h1>
 
-			<form onSubmit={handleSearch}>
+			<Form onSubmit={handleSearch}>
 				<Input
 					name='userId'
 					text='User ID (from 1 to 10)'
@@ -31,7 +31,7 @@ export const Account = (): JSX.Element => {
 					ref={inputRef}
 				/>
 				<Button>Search</Button>
-			</form>
+			</Form>
 
 			{userId && <UserDetails userId={userId} />}
 		</>

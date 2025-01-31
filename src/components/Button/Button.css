@@ -1,0 +1,13 @@
+button {
+	padding: 0.5rem;
+	height: min-content;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button.edit-button {
+	padding: 0.1rem;
+	width: 2rem;
+}

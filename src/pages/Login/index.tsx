@@ -1,17 +1,16 @@
 import { type FormEvent, useRef, useState } from 'react'
 
-import { Input, Button } from '../../components'
+import { Input, Button, Form, Error } from '../../components'
 import { useNavigate } from 'react-router'
 import { useStoreContext } from '../../context/StoreContext'
-
-const validLogin = 'admin'
-const validPassword = 'admin123'
+import { validLogin, validPassword } from '../../data/constants'
 
 export const Login = (): JSX.Element => {
-	const formRef = useRef<HTMLFormElement | null>(null)
-	const [error, setError] = useState<string | null>(null)
 	const navigate = useNavigate()
 	const { setIsLoggedIn } = useStoreContext()
+
+	const formRef = useRef<HTMLFormElement | null>(null)
+	const [error, setError] = useState<string | null>(null)
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
@@ -33,12 +32,12 @@ export const Login = (): JSX.Element => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit} ref={formRef}>
+			<Form onSubmit={handleSubmit} ref={formRef}>
 				<Input name='username' text='Username' />
 				<Input name='password' text='Password' type='password' />
 				<Button>Login</Button>
-				{error && <div style={{ color: 'red' }}>{error}</div>}
-			</form>
+				{error && <Error error={error} />}
+			</Form>
 		</>
 	)
 }

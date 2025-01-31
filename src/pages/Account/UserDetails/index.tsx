@@ -1,3 +1,4 @@
+import { Error, Preloader } from '../../../components'
 import { useFetch } from '../../../hooks'
 import EditableCell from './EditableCell'
 
@@ -23,8 +24,8 @@ export const UserDetails = ({ userId }: UserDetailsProps): JSX.Element => {
 		`https://jsonplaceholder.typicode.com/users/${userId}`
 	)
 
-	if (isLoading) return <div>Loading...</div>
-	if (error) return <div style={{ color: 'red' }}>{error}</div>
+	if (isLoading) return <Preloader />
+	if (error) return <Error error={error} />
 
 	if (data) {
 		return (

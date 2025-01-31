@@ -1,8 +1,7 @@
-import { NavLink } from 'react-router'
-
 import './Header.css'
-import { Button } from '../Button'
+
 import { useStoreContext } from '../../context/StoreContext'
+import { Button, Link } from '../../components'
 
 export const Header = (): JSX.Element => {
 	const { isLoggedIn, setIsLoggedIn } = useStoreContext()
@@ -19,13 +18,13 @@ export const Header = (): JSX.Element => {
 		<header>
 			<ul>
 				<li>
-					<NavLink to='/'>Home</NavLink>
+					<Link to='/'>Home</Link>
 				</li>
 				<li>
-					<NavLink to='/activation'>Activation</NavLink>
+					<Link to='/activation'>Activation</Link>
 				</li>
 				<li>
-					<NavLink to='/account'>Account</NavLink>
+					<Link to='/account'>Account</Link>
 				</li>
 				<li>
 					<Button onClick={() => setIsLoggedIn(false)}>

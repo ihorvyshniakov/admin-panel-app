@@ -1,0 +1,18 @@
+a {
+	padding: 1rem;
+	border-radius: 1rem;
+	text-decoration: none;
+	text-underline-offset: 0.25rem;
+	color: black;
+	transition: background 0.2s ease-in-out;
+}
+
+a:hover {
+	text-decoration: none;
+	background: grey;
+	color: white;
+}
+
+a.active {
+	text-decoration: underline;
+}
