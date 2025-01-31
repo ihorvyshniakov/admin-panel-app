@@ -1,4 +1,8 @@
-import { type PropsWithChildren, ComponentPropsWithoutRef } from 'react'
+import {
+	type PropsWithChildren,
+	type JSX,
+	ComponentPropsWithoutRef
+} from 'react'
 import { NavLink } from 'react-router'
 
 import './Link.css'

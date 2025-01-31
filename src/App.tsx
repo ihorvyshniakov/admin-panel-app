@@ -1,3 +1,4 @@
+import { type JSX } from 'react'
 import './App.css'
 import { Header } from './components'
 import { Navigation } from './Navigation'

@@ -1,4 +1,5 @@
-import { forwardRef, type ComponentPropsWithRef } from 'react'
+import { forwardRef, type ComponentPropsWithRef, type JSX } from 'react'
+
 import './Input.css'
 
 type InputProps = {

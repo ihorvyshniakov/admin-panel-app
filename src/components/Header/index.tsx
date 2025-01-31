@@ -1,5 +1,6 @@
-import './Header.css'
+import { type JSX } from 'react'
 
+import './Header.css'
 import { useStoreContext } from '../../context/StoreContext'
 import { Button, Link } from '../../components'
 

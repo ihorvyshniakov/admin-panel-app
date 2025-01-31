@@ -1,4 +1,4 @@
-import { type FormEvent, useRef, useState } from 'react'
+import { type FormEvent, type JSX, useRef, useState } from 'react'
 import { Button, Form, Input } from '../../../components'
 
 const EditableCell = ({

@@ -1,9 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router'
+import { type JSX } from 'react'
 
 import { Account, Activation, Home, Login } from './pages'
 import { useStoreContext } from './context/StoreContext'
 
-export const Navigation = () => {
+export const Navigation = (): JSX.Element => {
 	const { isLoggedIn } = useStoreContext()
 
 	if (isLoggedIn) {

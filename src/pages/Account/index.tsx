@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type JSX } from 'react'
 
 import { UserDetails } from './UserDetails'
 import { SearchUserForm } from './SearchUserForm'

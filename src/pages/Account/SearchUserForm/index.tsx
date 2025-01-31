@@ -1,4 +1,4 @@
-import { type FormEvent, useRef } from 'react'
+import { type FormEvent, type JSX, useRef } from 'react'
 
 import { type User } from '..'
 import { Button, Error, Form, Input, Preloader } from '../../../components'
