@@ -3,13 +3,13 @@ import './Input.css'
 
 type InputProps = {
 	name: string
-	text: string
+	text?: string
 	type?: 'text' | 'password' | 'number'
 } & ComponentPropsWithoutRef<'input'>
 
 export const Input = ({
 	name,
-	text,
+	text = '',
 	type = 'text',
 	...props
 }: InputProps): JSX.Element => {

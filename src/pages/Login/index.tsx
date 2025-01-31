@@ -33,7 +33,7 @@ export const Login = (): JSX.Element => {
 
 	return (
 		<>
-			<form className='form-login' onSubmit={handleSubmit} ref={formRef}>
+			<form onSubmit={handleSubmit} ref={formRef}>
 				<Input name='username' text='Username' />
 				<Input name='password' text='Password' type='password' />
 				<Button>Login</Button>

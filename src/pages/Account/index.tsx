@@ -9,6 +9,9 @@ export const Account = (): JSX.Element => {
 	const [error, setError] = useState('')
 	const [isLoading, setIsLoading] = useState(false)
 
+	const [editedAddress, setEditedAddress] = useState('')
+	const [isEditMode, setIsEditMode] = useState(false)
+
 	const handleSearch = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
@@ -29,6 +32,22 @@ export const Account = (): JSX.Element => {
 				.finally(() => {
 					setIsLoading(false)
 				})
+		}
+	}
+
+	const handleEdit = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault()
+		setIsEditMode(true)
+
+		if (formRef.current) {
+			const formData = new FormData(formRef.current)
+			const address = formData.get('address') || ''
+
+			if (typeof address === 'string' && address.trim() !== '') {
+				setEditedAddress(address)
+				setIsEditMode(false)
+				alert('Address successfully modified')
+			}
 		}
 	}
 
@@ -63,7 +82,27 @@ export const Account = (): JSX.Element => {
 						</tr>
 						<tr>
 							<th>Address</th>
-							<td>{user.address}</td>
+							{/* <td>{user.address}</td> */}
+							<td>
+								<form
+									className='form-small'
+									onSubmit={handleEdit}
+									ref={formRef}
+								>
+									{isEditMode ? (
+										<Input
+											name='address'
+											type='text'
+											required
+										/>
+									) : (
+										<p>{editedAddress || user.address}</p>
+									)}
+									<Button>
+										{isEditMode ? 'Ok' : 'Edit'}
+									</Button>
+								</form>
+							</td>
 						</tr>
 						<tr>
 							<th>Email</th>
