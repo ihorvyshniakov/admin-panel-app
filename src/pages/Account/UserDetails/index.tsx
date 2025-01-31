@@ -1,19 +1,7 @@
+import { type User } from '..'
 import { Error, Preloader } from '../../../components'
 import { useFetch } from '../../../hooks'
 import EditableCell from './EditableCell'
-
-type User = {
-	id: number
-	name: string
-	email: string
-	phone: string
-	address: {
-		city: string
-	}
-	company: {
-		name: string
-	}
-}
 
 type UserDetailsProps = {
 	userId: number

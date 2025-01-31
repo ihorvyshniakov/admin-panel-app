@@ -27,9 +27,7 @@ export const Header = (): JSX.Element => {
 					<Link to='/account'>Account</Link>
 				</li>
 				<li>
-					<Button onClick={() => setIsLoggedIn(false)}>
-						User Icon/Logout
-					</Button>
+					<Button onClick={() => setIsLoggedIn(false)}>Logout</Button>
 				</li>
 			</ul>
 		</header>
