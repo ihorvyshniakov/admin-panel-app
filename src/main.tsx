@@ -6,7 +6,7 @@ import { StoreContextProvider } from './context/StoreContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
 	<StoreContextProvider>
-		<BrowserRouter>
+		<BrowserRouter basename='/admin-panel-app'>
 			<App />
 		</BrowserRouter>
 	</StoreContextProvider>
